@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% include head.html %}
+    <body style="background-color:#3c4249;">
+        <button class="only-shadow" id="back-to-top-btn"><i class="fas fa-angle-double-up"></i></button>
+        {% include banner.html %}
+        {% include navbar.html %}
+        <div class="container-fluid">
+            {{ content }} 
+        </div>
+        <br>
+        {% include footer.html %}
+    </body>
+</html>
+

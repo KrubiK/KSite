@@ -1,0 +1,38 @@
+<section 
+  id="banner" 
+  class="py-5 d-none d-sm-block"
+  style="
+  {% if page.layout != "post" %}
+  background: url('{{ site.baseurl }}/assets/images/banner-film.jpg') no-repeat
+  {% else %}
+  background: url('{{ site.baseurl }}/assets/images/{{post.image}}') no-repeat
+  {% endif %}
+  ">
+    <div class="primary-overlay text-white">
+      <div class="container">
+        <div class="row">
+          <div class="col-2 display-4 pt-4">
+            <a href="{{ site.url }}">
+              <img src="{{ site.baseurl }}/assets/images/logo.png" width="90" height="90" alt="">
+            </a>
+          </div>
+          <div class="col-8 text-left">
+            {% if page.description and page.layout != "post" %}
+              <h1 class="display-4 pt-4">
+                {{ page.title }}
+              </h1>
+              {% else%}
+              <h1 class="display-3 pt-4">
+                {{ site.title }}
+                <!-- inserire tags qui-->
+              </h1>
+              {% endif %}
+              <h2>
+                {% if page.description and page.layout != "post" %}
+                  {{ page.description }}
+                {% endif %}
+              </h2>
+          </div>
+        </div>
+    </div>
+  </section>

@@ -1,0 +1,27 @@
+---
+layout: "wrapper"
+---
+<div id="post" class="container pt-3 text-white">
+    <div class="row">
+      <div class="col">
+        <h1>{{ page.title }} <span class="only-shadow badge badge-secondary">
+          {{ page.date | date: "%b %-d, %Y" }} </span></h1>
+        <div>
+          <i class="fas fa-tags"></i>
+          {% if post %}
+            {% assign categories = post.categories %}
+          {% else %}
+            {% assign categories = page.categories %}
+          {% endif %}
+          {% for category in categories %}
+          <a href="{{site.baseurl}}/categories/#{{category|slugize}}" class="only-shadow badge badge-light">{{category}}</a>
+          {% unless forloop.last %}&nbsp;{% endunless %}
+          {% endfor %}
+        </div>
+        <hr>
+        <article>
+          {{ content }}
+        </article>
+      </div>
+    </div>
+  </div>
